@@ -1,0 +1,196 @@
+/* Set box-sizing to border-box for all elements */
+* {
+    box-sizing: border-box;
+  }
+  
+  fieldset {
+    border: none;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    /* other styles */
+  }
+  
+  /* Use a modern sans-serif font for the entire page */
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Add some padding and a background color to the page */
+  body {
+    padding: 40px;
+    background-color: #f2f2f2;
+  }
+  
+  /* Add a white background and a drop shadow to the form */
+  form {
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+
+
+  /* Style the page title */
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+  }
+
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container {
+    margin-right: 20px;
+  }
+  
+  .logo {
+    max-height: 200px; /* adjust as needed */
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+  }
+
+  .logo2 {
+    max-height: 150px; /* adjust as needed */
+    max-width: 100%;
+    display: flex;
+    margin-left: auto;
+  }
+  
+  .heading-container {
+    flex: 1;
+  }
+  
+  .form-header h1,
+  .form-header h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+
+  /* Style the form labels */
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Style the form fields */
+  input[type="number"],
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+  }
+  
+  select:focus,
+  input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    display:block;
+    width: 50%;
+    padding: 10px;
+    background-color: #08954ed5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 20px;
+    margin: auto;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #08954efd;
+  }
+  
+  /* Style the error message */
+  #errorMsg {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    margin-top: 15px;
+  }
+  
+  /* Style the select dropdowns */
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239C92AC'%3E%3Cpath d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  /* Style the VIA Rail section */
+  #viaRailFields {
+    display: none;
+  }
+  
+  #viaRailFields label {
+    margin-top: 20px;
+  }
+  
+  #viaRailFields select {
+    margin-bottom: 20px;
+  }
+  
+  /* Add responsive styles */
+  @media screen and (max-width: 768px) {
+    /* Center the form on smaller screens */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  
+    /* Reduce the font size of the page title */
+    h1 {
+      font-size: 28px;
+    }
+  
+    /* Reduce the font size of the form labels and fields */
+    label, input[type="number"], select {
+      font-size: 14px;
+    }
+  
+    /* Adjust the margin of the form fields */
+    input[type="number"], select {
+      margin-bottom: 10px;
+    }
+  
+    /* Adjust the padding of the submit button */
+    button[type="submit"] {
+      padding: 8px;
+    }
+  }
+
+    /* Reduce the font size of the page title */
