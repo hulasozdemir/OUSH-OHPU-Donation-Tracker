@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Tracking System</title>
+	<title>Landing Page</title>
+	<style>
+		#container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f2f2f2;
+		}
+		.link-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px;
+			padding: 20px;
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+		.link-box img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+		.link-box a {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			color: #333;
+			text-decoration: none;
+		}
+		.link-box a:hover {
+			color: #007bff;
+		}
+	</style>
     <link rel="stylesheet" href="style.css">
-
 </head>
-
-
 <body>
-
+    
     <header class="form-header">
         <div class="logo-container">
           <img src="OUSH_Icon.png" alt="Logo" class="logo">
@@ -25,70 +55,20 @@
             <img src="logo.png" alt="Logo" class="logo2">
           </div>
       </header>
-    
-    <form id="inventoryForm" method="POST">
-        <fieldset>
-            <legend>Select donation type:</legend>
-            <label>
-                <input type="radio" name="donationType" value="Gift card" required>
-                Gift card
-            </label>
-            <label>
-                <input type="radio" name="donationType" value="ViaRail" required>
-                ViaRail
-            </label>
 
-            <label>
-                <input type="radio" name="donationType" value="Flair" required>
-                Flair Airlines
-            </label>
-        </fieldset>
-        <div id="giftCardOptions">
-            <label for="giftCardType">Gift Card Type:</label>
-            <select id="giftCardType">
-                <option value="">Select a gift card type</option>
-                <option value="Marks">Marks</option>
-                <option value="Canadian Tire">Canadian Tire</option>
-                <option value="Loblaws">Loblaws</option>
-            </select>
-
-            <label for="provinces">Province:</label>
-            <select id="provinces">
-                <option value="">Select a province</option>
-            </select>
-            <br>
-            <label for="cities">City:</label>
-            <select id="cities">
-                <option value="">Select a city</option>
-            </select>
-            <br>
-            <label for="spos">SPO:</label>
-            <select id="spos">
-                <option value="">Select a SPO</option>
-            </select>
-            <br>
-            <label for="numGiftCards">Number of gift cards:</label>
-            <input type="number" id="numGiftCards" min="0">
-
-        </div>
-
-        <div id="viaRailSection" style="display:none;">
-            <label for="from">From:</label>
-            <select id="from">
-              <!-- Options for the "From" dropdown go here -->
-            </select>
-          
-            <label for="to">To:</label>
-            <select id="to">
-              <!-- Options for the "To" dropdown go here -->
-            </select>
-          </div>
-        <!-- Add more form fields as needed -->
-
-        <button id="submitBtn" type="submit">Submit</button>
-
-    </form>
-    <script src="script.js"></script>
+	<div id="container">
+		<div class="link-box">
+			<img src="gift_card.png" alt="Web App 1">
+			<a href="gift_card.html" target="_self">Gift Cards</a>
+		</div>
+		<div class="link-box">
+			<img src="viarail_logo.png" alt="Web App 2">
+			<a href="viarail.html" target="_self">ViaRail</a>
+		</div>
+		<div class="link-box">
+			<img src="flair_logo.png" alt="Web App 3">
+			<a href="https://www.webapp3.com" target="_self">Flair Airlines</a>
+		</div>
+	</div>
 </body>
-
 </html>

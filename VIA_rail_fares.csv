@@ -1,51 +1,51 @@
-﻿Departure in,Origin,Destination,Traject,Eco Plus 2022 Base Fare,Total cost
-QC,Montreal,Brockville,Montreal to Brockville,$258.00 ,$296.64 
-ON,Brockville,Montreal,Brockville to Montreal,$258.00 ,$291.54 
-ON,Kingston,Montreal,Kingston to Montreal,$340.00 ,$384.20 
-QC,Montreal,Kingston,Montreal to Kingston,$340.00 ,$390.92 
-QC,Montreal,Kitchener,Montreal to Kitchener,$678.00 ,$779.53 
-ON,Kitchener,Montreal,Kitchener to Montreal,$678.00 ,$766.14 
-QC,Montreal,London,Montreal to London,$702.00 ,$807.12 
-ON,London,Montreal,London to Montreal,$702.00 ,$793.26 
-QC,Montreal,Ottawa,Montreal to Ottawa,$238.00 ,$273.64 
-ON,Ottawa,Montreal,Ottawa to Montreal,$238.00 ,$268.94 
-QC,Montreal,Stratford,Montreal to Stratford,$706.00 ,$811.72 
-ON,Stratford,Montreal,Stratford to Montreal,$706.00 ,$797.78 
-QC,Montreal,Toronto,Montreal to Toronto,$516.00 ,$593.27 
-ON,Toronto,Montreal,Toronto to Montreal,$516.00 ,$583.08 
-QC,Quebec City,Aldershot,Quebec City to Aldershot,$738.00 ,$848.52 
-ON,Aldershot,Quebec City,Aldershot to Quebec City,$738.00 ,$833.94 
-QC,Quebec City,Kingston,Quebec City to Kingston,$496.00 ,$570.28 
-ON,Kingston,Quebec City,Kingston to Quebec City,$496.00 ,$560.48 
-QC,Quebec City,Kitchener,Quebec City to Kitchener,$768.00 ,$883.01 
-ON,Kitchener,Quebec City,Kitchener to Quebec City,$768.00 ,$867.84 
-QC,Quebec City,London,Quebec City to London,$864.00 ,$993.38 
-ON,London,Quebec City,London to Quebec City,$864.00 ,$976.32 
-QC,Quebec City,Montreal,Quebec City to Montreal,$318.00 ,$365.62 
-QC,Montreal,Quebec City,Montreal to Quebec City,$318.00 ,$365.62 
-QC,Quebec City,Ottawa,Quebec City to Ottawa,$480.00 ,$551.88 
-ON,Ottawa,Quebec City,Ottawa to Quebec City,$480.00 ,$542.40 
-QC,Quebec City,Toronto,Quebec City to Toronto,$688.00 ,$791.03 
-ON,Toronto,Quebec City,Toronto to Quebec City,$688.00 ,$777.44 
-QC,Quebec City,Windsor,Quebec City to Windsor,$952.00 ,"$1,094.56 "
-ON,Windsor,Quebec City,Windsor to Quebec City,$952.00 ,"$1,075.76 "
-ON,Toronto,Brockville,Toronto to Brockville,$382.00 ,$431.66 
-ON,Brockville,Toronto,Brockville to Toronto,$382.00 ,$431.66 
-ON,Toronto,Guelph,Toronto to Guelph,$116.00 ,$131.08 
-ON,Guelph,Toronto,Guelph to Toronto,$116.00 ,$131.08 
-ON,Toronto,Aldershot,Toronto to Aldershot,$94.00 ,$106.22 
-ON,Aldershot,Toronto,Aldershot to Toronto,$94.00 ,$106.22 
-ON,Toronto,Kingston,Toronto to Kingston,$350.00 ,$395.50 
-ON,Kingston,Toronto,Kingston to Toronto,$350.00 ,$395.50 
-ON,Toronto,Kitchener,Toronto to Kitchener,$138.00 ,$155.94 
-ON,Kitchener,Toronto,Kitchener to Toronto,$138.00 ,$155.94 
-ON,Toronto,London,Toronto to London,$268.00 ,$302.84 
-ON,London,Toronto,London to Toronto,$268.00 ,$302.84 
-ON,Toronto,Montreal,Toronto to Montreal,$516.00 ,$583.08 
-QC,Montreal,Toronto,Montreal to Toronto,$516.00 ,$593.27 
-ON,Toronto,Ottawa,Toronto to Ottawa,$512.00 ,$578.56 
-ON,Ottawa,Toronto,Ottawa to Toronto,$512.00 ,$578.56 
-ON,Toronto,Windsor,Toronto to Windsor,$376.00 ,$424.88 
-ON,Windsor,Toronto,Windsor to Toronto,$376.00 ,$424.88 
-ON,Kingston,Ottawa,Kingston to Ottawa,$308.00 ,$348.04 
-ON,Ottawa,Kingston,Ottawa to Kingston,$308.00 ,$348.04 
+﻿Origin,Destination,Traject,Eco Plus 2022 Base Fare,Total cost
+Montreal,Brockville,Montreal to Brockville,258.00,296.64
+Brockville,Montreal,Brockville to Montreal,258.00,291.54
+Kingston,Montreal,Kingston to Montreal,340.00,384.20
+Montreal,Kingston,Montreal to Kingston,340.00,390.92
+Montreal,Kitchener,Montreal to Kitchener,678.00,779.53
+Kitchener,Montreal,Kitchener to Montreal,678.00,766.14
+Montreal,London,Montreal to London,702.00,807.12
+London,Montreal,London to Montreal,702.00,793.26
+Montreal,Ottawa,Montreal to Ottawa,238.00,273.64
+Ottawa,Montreal,Ottawa to Montreal,238.00,268.94
+Montreal,Stratford,Montreal to Stratford,706.00,811.72
+Stratford,Montreal,Stratford to Montreal,706.00,797.78
+Montreal,Toronto,Montreal to Toronto,516.00,593.27
+Toronto,Montreal,Toronto to Montreal,516.00,583.08
+Quebec City,Aldershot,Quebec City to Aldershot,738.00,848.52
+Aldershot,Quebec City,Aldershot to Quebec City,738.00,833.94
+Quebec City,Kingston,Quebec City to Kingston,496.00,570.28
+Kingston,Quebec City,Kingston to Quebec City,496.00,560.48
+Quebec City,Kitchener,Quebec City to Kitchener,768.00,883.01
+Kitchener,Quebec City,Kitchener to Quebec City,768.00,867.84
+Quebec City,London,Quebec City to London,864.00,993.38
+London,Quebec City,London to Quebec City,864.00,976.32
+Quebec City,Montreal,Quebec City to Montreal,318.00,365.62
+Montreal,Quebec City,Montreal to Quebec City,318.00,365.62
+Quebec City,Ottawa,Quebec City to Ottawa,480.00,551.88
+Ottawa,Quebec City,Ottawa to Quebec City,480.00,542.40
+Quebec City,Toronto,Quebec City to Toronto,688.00,791.03
+Toronto,Quebec City,Toronto to Quebec City,688.00,777.44
+Quebec City,Windsor,Quebec City to Windsor,952.00,1094.56
+Windsor,Quebec City,Windsor to Quebec City,952.00,1075.76
+Toronto,Brockville,Toronto to Brockville,382.00,431.66
+Brockville,Toronto,Brockville to Toronto,382.00,431.66
+Toronto,Guelph,Toronto to Guelph,116.00,131.08
+Guelph,Toronto,Guelph to Toronto,116.00,131.08
+Toronto,Aldershot,Toronto to Aldershot,94.00,106.22
+Aldershot,Toronto,Aldershot to Toronto,94.00,106.22
+Toronto,Kingston,Toronto to Kingston,350.00,395.50
+Kingston,Toronto,Kingston to Toronto,350.00,395.50
+Toronto,Kitchener,Toronto to Kitchener,138.00,155.94
+Kitchener,Toronto,Kitchener to Toronto,138.00,155.94
+Toronto,London,Toronto to London,268.00,302.84
+London,Toronto,London to Toronto,268.00,302.84
+Toronto,Montreal,Toronto to Montreal,516.00,583.08
+Montreal,Toronto,Montreal to Toronto,516.00,593.27
+Toronto,Ottawa,Toronto to Ottawa,512.00,578.56
+Ottawa,Toronto,Ottawa to Toronto,512.00,578.56
+Toronto,Windsor,Toronto to Windsor,376.00,424.88
+Windsor,Toronto,Windsor to Toronto,376.00,424.88
+Kingston,Ottawa,Kingston to Ottawa,308.00,348.04
+Ottawa,Kingston,Ottawa to Kingston,308.00,348.04

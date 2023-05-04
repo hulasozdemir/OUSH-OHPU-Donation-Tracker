@@ -5,52 +5,18 @@ const citiesDropdown = document.getElementById('cities');
 const spoDropdown = document.getElementById('spos');
 
 
-
-const options = [
-    { value: 'toronto', label: 'Toronto' },
-    { value: 'ottawa', label: 'Ottawa' },
-    { value: 'montreal', label: 'Montreal' },
-    // Add more options as needed
-];
+// document.querySelectorAll('input[name="donationType"]').forEach(radio => {
+//     radio.addEventListener('change', updateViaRailOptionsVisibility);
+// });
 
 
-const fromDropdown = document.getElementById('from');
-const toDropdown = document.getElementById('to');
+// function updateGiftCardOptionsVisibility() {
+//     giftCardOptions.style.display = giftCardRadio.checked ? 'block' : 'none';
+// }
 
-options.forEach(option => {
-    const fromOption = document.createElement('option');
-    fromOption.value = option.value;
-    fromOption.textContent = option.label;
-    fromDropdown.appendChild(fromOption);
-
-    const toOption = document.createElement('option');
-    toOption.value = option.value;
-    toOption.textContent = option.label;
-    toDropdown.appendChild(toOption);
-});
-
-
-const viaRailRadio = document.querySelector('input[name="donationType"][value="ViaRail"]');
-const viaRailSection = document.getElementById('viaRailSection');
-
-function updateViaRailOptionsVisibility() {
-    viaRailSection.style.display = viaRailRadio.checked ? 'block' : 'none';
-}
-
-document.querySelectorAll('input[name="donationType"]').forEach(radio => {
-    radio.addEventListener('change', updateViaRailOptionsVisibility);
-});
-
-updateViaRailOptionsVisibility();
-
-
-function updateGiftCardOptionsVisibility() {
-    giftCardOptions.style.display = giftCardRadio.checked ? 'block' : 'none';
-}
-
-document.querySelectorAll('input[name="donationType"]').forEach(radio => {
-    radio.addEventListener('change', updateGiftCardOptionsVisibility);
-});
+// document.querySelectorAll('input[name="donationType"]').forEach(radio => {
+//     radio.addEventListener('change', updateGiftCardOptionsVisibility);
+// });
 
 let citiesByProvince = {};
 let sposByCity = {};
@@ -108,34 +74,6 @@ async function parseCsvData(csvData) {
     return { provinces, citiesByProvince, sposByCity };
 }
 
-
-async function parseCsvData_VIARAIL(csvData) {
-    const lines = csvData.split('\n');
-    const data = {};
-
-    // Loop through each line of the CSV file
-    for (let i = 1; i < lines.length; i++) {
-        const line = lines[i];
-        const parts = line.split(',');
-
-        // Extract the Origin and Destination values from the line
-        const origin = parts[1];
-        const destination = parts[2];
-
-        // Add the Destination to the mapping for the Origin
-        if (!data[origin]) {
-            data[origin] = [];
-        }
-        data[origin].push(destination);
-    }
-
-    return data;
-}
-
-
-
-
-
 function updateProvincesDropdown(provinces) {
     provinces.sort();
     provincesDropdown.innerHTML = ['<option value="">Select a province</option>', ...provinces.map(province => `<option value="${province}">${province}</option>`)].join('');
@@ -158,63 +96,8 @@ loadProvincesAndCities().then(({ provinces, citiesByProvince: cities, sposByCity
     console.error('Failed to load provinces, cities, and SPOs from CSV:', error);
 });
 
-
-
-async function loadOriginsAndDestinatios() {
-    const csvUrl = 'VIA_rail_fares.csv';
-
-    // Load the CSV data and parse it into an object mapping Origins to Destinations
-    const csvData = await fetchCsvData(csvUrl);
-    const data = parseCsvData_VIARAIL(csvData);
-
-    // Get references to the "from" and "to" drop-down menus
-    const fromDropdown = document.getElementById('from');
-    const toDropdown = document.getElementById('to');
-
-    // Build an array of unique Origins and sort them
-    const origins = Object.keys(data).sort();
-
-    // Add the unique Origins to the "from" drop-down menu
-    for (let i = 0; i < origins.length; i++) {
-        const option = document.createElement('option');
-        option.value = origins[i];
-        option.textContent = origins[i];
-        fromDropdown.appendChild(option);
-    }
-
-    // Update the "to" drop-down menu when the selected "from" option changes
-    function updateToDropdown() {
-        const selectedOrigin = fromDropdown.value;
-        const destinations = data[selectedOrigin] || [];
-
-        // Remove all existing options from the "to" drop-down menu
-        toDropdown.innerHTML = '';
-
-        // Add a default option to the "to" drop-down menu
-        const defaultOption = document.createElement('option');
-        defaultOption.value = '';
-        defaultOption.textContent = 'Select a destination';
-        toDropdown.appendChild(defaultOption);
-
-        // Add each available Destination to the "to" drop-down menu
-        for (let i = 0; i < destinations.length; i++) {
-            const option = document.createElement('option');
-            option.value = destinations[i];
-            option.textContent = destinations[i];
-            toDropdown.appendChild(option);
-        }
-    }
-
-    // Call the updateToDropdown() function when the selected "from" option changes
-    fromDropdown.addEventListener('change', updateToDropdown);
-}
-
-
-
-
-
-updateGiftCardOptionsVisibility();
-loadOriginsAndDestinatios()
+// updateGiftCardOptionsVisibility();
+// loadOriginsAndDestinatios()
 
 const form = document.getElementById('inventoryForm');
 const submitBtn = document.getElementById('submitBtn');

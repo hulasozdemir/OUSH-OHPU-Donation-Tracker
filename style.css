@@ -193,4 +193,40 @@
     }
   }
 
+  input[type="text"][readonly] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+}
+
+input[type="text"][readonly]:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the date input */
+input[type="date"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f2f2f2;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
     /* Reduce the font size of the page title */
