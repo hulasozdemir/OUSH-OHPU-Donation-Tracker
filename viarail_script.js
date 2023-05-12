@@ -76,19 +76,19 @@ function updateFareDetails() {
     }
 }
 
-document.getElementById('travel-voucher-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+// document.getElementById('travel-voucher-form').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent form submission
 
-    const origin = document.getElementById('origin').value;
-    const destination = document.getElementById('destination').value;
+//     const origin = document.getElementById('origin').value;
+//     const destination = document.getElementById('destination').value;
 
-    if (origin === '' || destination === '') {
-        alert('Please choose both an origin and a destination.');
-    } else {
-        alert(`Origin: ${origin}\nDestination: ${destination}`);
-        // Process the form data (e.g., save to a database or send via email)
-    }
-});
+//     if (origin === '' || destination === '') {
+//         alert('Please choose both an origin and a destination.');
+//     } else {
+//         alert(`Origin: ${origin}\nDestination: ${destination}`);
+//         // Process the form data (e.g., save to a database or send via email)
+//     }
+// });
 
 // Initialize the form
 initialize();
@@ -105,6 +105,11 @@ form.addEventListener('submit', async (event) => {
     const destination = document.getElementById('destination').value;
     const baseFare = document.getElementById('base-fare').value;
     const totalFare = document.getElementById('total-fare').value;
+
+    if (!PTHub || !dateTravel || !origin  || !destination || !baseFare || !totalFare) {
+        alert('Please fill all fields before submitting.');
+        return;
+      }
 
     const data = {
         PTHub,

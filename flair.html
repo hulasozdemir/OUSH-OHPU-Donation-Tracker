@@ -2,60 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flair Airlines Voucher Tracking System</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Booking Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="form-header">
-        <div class="logo-container">
-            <img src="OUSH_Icon.png" alt="Logo" class="logo">
-        </div>
-        <div class="heading-container">
-            <h1>Operation Ukrainian Safe Haven</h1>
-            <h2>Flair Airlines Voucher Tracking System</h2>
-        </div>
-
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo2">
-        </div>
-    </header>
-    <form id="travel-voucher-form" method="POST">
-        <label for="pt-hubs">PT Hub:</label>
-        <select id="pt-hubs" name="pt-hubs">
-            <option value="">--Please choose a PT Hub--</option>
-            <option value="Ontario">Ontario</option>
-            <option value="Quebec">Quebec</option>
-        </select>
-        <br><br>
-
-        <label for="travel-date">Travel Date:</label>
-        <input type="date" id="travel-date" name="travel-date">
-        <br><br>
-
-
-        <label for="origin">Origin:</label>
-        <select id="origin" name="origin" onchange="updateDestinationOptions()" disabled>
-            <option value="">--Please choose an origin--</option>
-        </select>
-        <br>
-        <label for="destination">Destination:</label>
-        <select id="destination" name="destination" onchange="updateFareDetails()" disabled>
-            <option value="">--Please choose a destination--</option>
-        </select>
-        <br>
-        <label for="base-fare">Base Fare:</label>
-        <input type="text" id="base-fare" name="base-fare" readonly>
-        <br>
-        <label for="total-fare">Total Fare:</label>
-        <input type="text" id="total-fare" name="total-fare" readonly>
-        <br>
-        <button id="submitBtn" type="submit">Submit</button>
-    </form>
-
-    <script src="viarail_script.js"></script>
+  <form id="flair-form" method="POST">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address">
+    <br>
+    <label for="trip-date">Trip Date:</label>
+    <input type="date" id="trip-date" name="trip-date">
+    <br>
+    <label for="origin">Origin:</label>
+    <select id="origin" name="origin" onchange="updateDestinationOptions(); showAirport('origin', 'originAirport')">
+      <option value="" disabled selected>Please choose an origin</option>
+    </select>
+    <input type="text" id="originAirport" name="originAirport" readonly>
+    <br>
+    <label for="destination">Destination:</label>
+    <select id="destination" name="destination" onchange="showAirport('destination', 'destinationAirport')">
+      <option value="" disabled selected>Please choose a destination</option>
+    </select>
+    <input type="text" id="destinationAirport" name="destinationAirport" readonly>
+    <br>
+    <label for="ticket-cost">Ticket Cost:</label>
+    <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax">
+    <br>
+    <button id="submitBtn" type="submit">Submit</button>
+  </form>
+  <script src="flair_script.js"></script>
 </body>
 
 </html>

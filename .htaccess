@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Restricted Area"
-AuthUserFile passwords
-Require valid-user
