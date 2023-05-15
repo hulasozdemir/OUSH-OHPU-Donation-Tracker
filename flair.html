@@ -5,32 +5,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flight Booking Form</title>
+  <link rel="icon" type="image/jpeg" href="images/favicon.ico">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <body>
+    <header class="form-header">
+        <div class="logo-container">
+            <img src="images/OUSH_Icon.png" alt="Logo" class="logo">
+        </div>
+        <div class="heading-container">
+            <h1>Operation Ukrainian Safe Haven</h1>
+            <h2>Flair Airlines Voucher Code Tracking System</h2>
+        </div>
+
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo2">
+        </div>
+    </header>
   <form id="flair-form" method="POST">
+    <fieldset>
+      <legend>Service Provider Organization Information</legend>
+    <label for="provinces">Province:</label>
+    <select id="provinces">
+      <option value="">Select a province</option>
+    </select>
+    <label for="cities">City:</label>
+    <select id="cities">
+      <option value="">Select a city</option>
+    </select>
+    <label for="spos">SPO:</label>
+    <select id="spos">
+      <option value="">Select a SPO</option>
+    </select>
+
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder="Enter your email address">
-    <br>
+    
+  </fieldset>
+  <br>
+  <br>
+  <fieldset>
+    <legend>Trip Details</legend>
     <label for="trip-date">Trip Date:</label>
     <input type="date" id="trip-date" name="trip-date">
     <br>
     <label for="origin">Origin:</label>
-    <select id="origin" name="origin" onchange="updateDestinationOptions(); showAirport('origin', 'originAirport')">
-      <option value="" disabled selected>Please choose an origin</option>
+    <select id="origin" name="origin" onchange="refreshDestinationOptions(); displayAirport('origin', 'originAirport')">
+      <option value="" disabled selected>Please choose an origin city</option>
     </select>
-    <input type="text" id="originAirport" name="originAirport" readonly>
+    <input type="text" id="originAirport" name="originAirport" readonly placeholder="Destination airport">
     <br>
     <label for="destination">Destination:</label>
-    <select id="destination" name="destination" onchange="showAirport('destination', 'destinationAirport')">
-      <option value="" disabled selected>Please choose a destination</option>
+    <select id="destination" name="destination" onchange="displayAirport('destination', 'destinationAirport')">
+      <option value="" disabled selected>Please choose a destination city</option>
     </select>
-    <input type="text" id="destinationAirport" name="destinationAirport" readonly>
+    <input type="text" id="destinationAirport" name="destinationAirport" readonly placeholder="Destination airport">
+    <br>
+    <label for="passengers">Number of passengers:</label>
+    <input type="number" id="passengers" name="passengers"
+      placeholder="Each voucher code can be used to make a booking for upto three passengers" min=1 max=3>
     <br>
     <label for="ticket-cost">Ticket Cost:</label>
-    <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax">
+    <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax" min=0>
     <br>
+  </fieldset>
     <button id="submitBtn" type="submit">Submit</button>
   </form>
   <script src="flair_script.js"></script>

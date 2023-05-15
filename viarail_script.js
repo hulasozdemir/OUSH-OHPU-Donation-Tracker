@@ -25,7 +25,7 @@ function parseCSV(csvData) {
 
 async function initialize() {
     try {
-        const csvData = await fetchCSVData('VIA_rail_fares.csv'); // Replace 'routes.csv' with the URL to your CSV file
+        const csvData = await fetchCSVData('data/VIA_rail_fares.csv'); // Replace 'routes.csv' with the URL to your CSV file
         parseCSV(csvData);
         populateOrigins();
     } catch (error) {

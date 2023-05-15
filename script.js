@@ -80,7 +80,7 @@ function updateProvincesDropdown(provinces) {
 }
 
 async function loadProvincesAndCities() {
-    const csvUrl = 'SPOs_processed.csv';
+    const csvUrl = 'data/SPOs_processed.csv';
     const csvData = await fetchCsvData(csvUrl);
     const parsedData = await parseCsvData(csvData);
     return parsedData;
@@ -110,18 +110,19 @@ form.addEventListener('submit', async (event) => {
     const city = document.getElementById('cities').value;
     const spo = document.getElementById('spos').value;
     const numGiftCards = document.getElementById('numGiftCards').value;
+    const comments = document.getElementById('comments').value;
 
     const data = {
         giftCardType,
         province,
         city,
         spo,
-        numGiftCards
+        numGiftCards,
+        comments
     };
 
     const proxyUrl = '';
-    const targetUrl = 'https://script.google.com/macros/s/AKfycbz6mg0wzPqf6wj70v0Yl3KNARdnNkNyrjxev-88AITjUhfdTxUwexKNKkotDlXFrcVlLg/exec';
-
+    const targetUrl = 'https://script.google.com/macros/s/AKfycbx0WcIJjB8-Sg2beV_ssTXGO9ueyUTaRy4u5ci25aijkaDJabDoIm5sYX_ZnRmkHi73NA/exec';
 
     try {
         const response = await fetch(proxyUrl + targetUrl, {
