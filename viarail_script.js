@@ -121,7 +121,8 @@ form.addEventListener('submit', async (event) => {
     };
 
     const proxyUrl = '';
-    const targetUrl = 'https://script.google.com/macros/s/AKfycbwxl3qfgPy-_yewyA6-czUyOw02VeAK_CgSTD_Tee7oLQjtfGs96Dr8c7GLxjVFt5NC/exec';
+    const targetUrl  = "https://script.google.com/macros/s/AKfycbwHg796wuOH0b92Ld8bGFP0w6SEDx-cGchKUrx_mcwAKm-CCd9pZ-vuCqn_OaTcXxUN_g/exec" // oush
+    // const targetUrl = 'https://script.google.com/macros/s/AKfycbwxl3qfgPy-_yewyA6-czUyOw02VeAK_CgSTD_Tee7oLQjtfGs96Dr8c7GLxjVFt5NC/exec'; ulas
 
 
     try {

@@ -122,7 +122,8 @@ form.addEventListener('submit', async (event) => {
     };
 
     const proxyUrl = '';
-    const targetUrl = 'https://script.google.com/macros/s/AKfycbx0WcIJjB8-Sg2beV_ssTXGO9ueyUTaRy4u5ci25aijkaDJabDoIm5sYX_ZnRmkHi73NA/exec';
+    const targetUrl = "https://script.google.com/macros/s/AKfycbzE-2ibYOgH6fc3_Nb2NkzXgLsmigBrMcjDMRswMLE3STJLRL05BejnE7zVlrezUYsb/exec"; //oush
+    // const targetUrl = 'https://script.google.com/macros/s/AKfycbx0WcIJjB8-Sg2beV_ssTXGO9ueyUTaRy4u5ci25aijkaDJabDoIm5sYX_ZnRmkHi73NA/exec'; ulas
 
     try {
         const response = await fetch(proxyUrl + targetUrl, {
