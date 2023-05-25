@@ -23,13 +23,14 @@ function updateCitiesDropdown() {
     const selectedProvince = provincesDropdown.value;
     const cities = citiesByProvince[selectedProvince] || [];
     cities.sort();
-    citiesDropdown.innerHTML = ['<option value="">Select a city</option>', ...cities.map(city => `<option value="${city}">${city}</option>`)].join('');
+    citiesDropdown.innerHTML = ['<option value="" disabled selected>Select a city</option>', ...cities.map(city => `<option value="${city}">${city}</option>`)].join('');
 }
 
 function updateSPODropdown() {
     const selectedCity = citiesDropdown.value;
     const spos = sposByCity[selectedCity] || [];
-    spoDropdown.innerHTML = ['<option value="">Select a SPO</option>', ...spos.map(spo => `<option value="${spo}">${spo}</option>`)].join('');
+    spos.sort()
+    spoDropdown.innerHTML = ['<option value="" disabled selected>Select a SPO</option>', ...spos.map(spo => `<option value="${spo}">${spo}</option>`)].join('');
 }
 
 provincesDropdown.addEventListener('change', updateCitiesDropdown);
@@ -66,16 +67,17 @@ async function parseCsvData(csvData) {
             if (!sposByCity[city].includes(spo)) {
                 sposByCity[city].push(spo);
             }
+            if (!sposByCity[city].includes("Other")) {
+              sposByCity[city].push("Other");
+          }
         }
     });
-
     return { provinces, citiesByProvince, sposByCity };
 }
 
 function updateProvincesDropdown(provinces) {
-  console.log(provinces)  
   provinces.sort();
-    provincesDropdown.innerHTML = ['<option value="">Select a province</option>', ...provinces.map(province => `<option value="${province}">${province}</option>`)].join('');
+    provincesDropdown.innerHTML = ['<option value="" disabled selected>Select a province</option>', ...provinces.map(province => `<option value="${province}">${province}</option>`)].join('');
 }
 
 async function loadProvincesAndCities() {
@@ -87,6 +89,7 @@ async function loadProvincesAndCities() {
 
 loadProvincesAndCities().then(({ provinces, citiesByProvince: cities, sposByCity: spos }) => {
     citiesByProvince = cities;
+    
     sposByCity = spos;
     updateProvincesDropdown(provinces);
     updateCitiesDropdown();
@@ -165,6 +168,7 @@ formElement.addEventListener('submit', async (event) => {
   const destination = document.getElementById('destination').value;
   const passengers = document.getElementById('passengers').value;
   const ticketCost = document.getElementById('ticket-cost').value;
+  const other = document.getElementById('other').value;
 
   const formData = {
     province,
@@ -174,7 +178,8 @@ formElement.addEventListener('submit', async (event) => {
     origin,
     destination,
     passengers,
-    ticketCost
+    ticketCost,
+    other
   };
 
   const proxyUrl = '';

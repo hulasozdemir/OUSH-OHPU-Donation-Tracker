@@ -10,70 +10,102 @@
 </head>
 
 <body>
+  
+  
+
   <body>
     <header class="form-header">
-        <div class="logo-container">
-            <img src="images/OUSH_Icon.png" alt="Logo" class="logo">
-        </div>
-        <div class="heading-container">
-            <h1>Operation Ukrainian Safe Haven</h1>
-            <h2>Flair Airlines Voucher Code Tracking System</h2>
-        </div>
+      <div class="logo-container">
+        <img src="images/OUSH_Icon.png" alt="Logo" class="logo">
+      </div>
+      <div class="heading-container">
+        <h1>Operation Ukrainian Safe Haven</h1>
+        <h2>Flair Airlines Voucher Code Tracking System</h2>
+      </div>
 
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Logo" class="logo2">
-        </div>
+      <div class="logo-container">
+        <img src="images/logo.png" alt="Logo" class="logo2">
+      </div>
     </header>
-  <form id="flair-form" method="POST">
-    <fieldset>
-      <legend>Service Provider Organization Information</legend>
-    <label for="provinces">Province:</label>
-    <select id="provinces">
-      <option value="">Select a province</option>
-    </select>
-    <label for="cities">City:</label>
-    <select id="cities">
-      <option value="">Select a city</option>
-    </select>
-    <label for="spos">SPO:</label>
-    <select id="spos">
-      <option value="">Select a SPO</option>
-    </select>
+    <form id="flair-form" method="POST">
+      <fieldset>
+        <legend>Service Provider Organization Information</legend>
+        <label for="provinces">Province:</label>
+        <select id="provinces">
+          <option value="" disabled selected>Select a province</option>
+        </select>
+        <label for="cities">City:</label>
+        <select id="cities">
+          <option value="" disabled selected>Select a city</option>
+        </select>
+        <label for="spos">SPO:</label>
+        <select id="spos">
+          <option value="" disabled selected>Select a SPO</option>
+        </select>
+        
+        <label for="other">Other:</label>
+        <input type="text" id="other" name="other" placeholder="You can use this field if there is any missing SPO in the list">
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email address">
-    
-  </fieldset>
-  <br>
-  <br>
-  <fieldset>
-    <legend>Trip Details</legend>
-    <label for="trip-date">Trip Date:</label>
-    <input type="date" id="trip-date" name="trip-date">
-    <br>
-    <label for="origin">Origin:</label>
-    <select id="origin" name="origin" onchange="refreshDestinationOptions(); displayAirport('origin', 'originAirport')">
-      <option value="" disabled selected>Please choose an origin city</option>
-    </select>
-    <input type="text" id="originAirport" name="originAirport" readonly placeholder="Destination airport">
-    <br>
-    <label for="destination">Destination:</label>
-    <select id="destination" name="destination" onchange="displayAirport('destination', 'destinationAirport')">
-      <option value="" disabled selected>Please choose a destination city</option>
-    </select>
-    <input type="text" id="destinationAirport" name="destinationAirport" readonly placeholder="Destination airport">
-    <br>
-    <label for="passengers">Number of passengers:</label>
-    <input type="number" id="passengers" name="passengers"
-      placeholder="Each voucher code can be used to make a booking for upto three passengers" min=1 max=3>
-    <br>
-    <label for="ticket-cost">Ticket Cost:</label>
-    <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax" min=0>
-    <br>
-  </fieldset>
-    <button id="submitBtn" type="submit">Submit</button>
-  </form>
-  <script src="flair_script.js"></script>
-</body>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
+        
+
+      </fieldset>
+      <br>
+      <br>
+      <fieldset>
+        <legend>Trip Details</legend>
+        <label for="trip-date">Trip Date:</label>
+        <input type="date" id="trip-date" name="trip-date">
+        <br>
+        <label for="origin">Origin:</label>
+        <select id="origin" name="origin"
+          onchange="refreshDestinationOptions(); displayAirport('origin', 'originAirport')">
+          <option value="" disabled selected>Please choose an origin city</option>
+        </select>
+        <input type="text" id="originAirport" name="originAirport" readonly placeholder="Destination airport">
+        <br>
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" onchange="displayAirport('destination', 'destinationAirport')">
+          <option value="" disabled selected>Please choose a destination city</option>
+        </select>
+        <input type="text" id="destinationAirport" name="destinationAirport" readonly placeholder="Destination airport">
+        <br>
+        <label for="passengers">Number of passengers:</label>
+        <input type="number" id="passengers" name="passengers"
+          placeholder="Each voucher code can be used to make a booking for upto three passengers" min=1 max=3>
+        <br>
+        <label for="ticket-cost">Ticket Cost:</label>
+        <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax" min=0>
+        <br>
+      </fieldset>
+      <button id="submitBtn" type="submit">Submit</button>
+    </form>
+
+    <div class='tableauPlaceholder' id='viz1684973338761' style="position: absolute;"><noscript><a href='#'><img
+      alt='Dashboard 1 '
+      src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fl&#47;FlairAirlinesAllocations&#47;Dashboard1&#47;1_rss.png'
+      style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+  <param name='embed_code_version' value='3' />
+  <param name='site_root' value='' />
+  <param name='name' value='FlairAirlinesAllocations&#47;Dashboard1' />
+  <param name='tabs' value='no' />
+  <param name='toolbar' value='no' />
+  <param name='static_image'
+    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fl&#47;FlairAirlinesAllocations&#47;Dashboard1&#47;1.png' />
+  <param name='animate_transition' value='yes' />
+  <param name='display_static_image' value='yes' />
+  <param name='display_spinner' value='yes' />
+  <param name='display_overlay' value='yes' />
+  <param name='display_count' value='yes' />
+  <param name='language' value='en-US' />
+  <param name='filter' value='publish=yes' />
+  </object></div>
+  <script
+  type='text/javascript'>                    var divElement = document.getElementById('viz1684973338761'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '600px'; vizElement.style.height = '415px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '600px'; vizElement.style.height = '415px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '727px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+    <script src="flair_script.js"></script>
+  </body>
 
 </html>

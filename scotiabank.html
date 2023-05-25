@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Allocation Form</title>
+    <link rel="stylesheet" href="scotiabak_style.css">
+</head>
+
+<body>
+    <header class="form-header">
+        <div class="logo-container">
+            <img src="images/OUSH_Icon.png" alt="Logo" class="logo">
+        </div>
+        <div class="heading-container">
+            <h1>Operation Ukrainian Safe Haven</h1>
+            <h2>Scotiabank Gift Card Reporting System</h2>
+        </div>
+
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo2">
+        </div>
+    </header>
+    <div class="summary-box">
+        <div class="summary-item">
+            <h3>Total Allocation:</h3>
+            <p id="allocationDisplay"></p>
+        </div>
+        <div class="summary-item">
+            <h3>Total Allocated:</h3>
+            <p id="totalSpendings"></p>
+        </div>
+        <div class="summary-item">
+            <h3>Total Remaining:</h3>
+            <p id="remainingAmount"></p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Gift Card</th>
+                <th>Denomination per card</th>
+                <th>Activation fee per card</th>
+                <th>Total cost per card</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Visa</td>
+                <td>$50.00</td>
+                <td>$1.50</td>
+                <td>$51.50</td>
+            </tr>
+            <tr>
+                <td>Loblaws</td>
+                <td>$50.00</td>
+                <td>$0.00</td>
+                <td>$50.00</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <form id="allocationForm">
+        <div class="form-field">
+            <label for="province" class="province-label">Province</label>
+            <select id="province" name="province" class="province-dropdown">
+                <option value="" disabled selected>Select a province</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="Quebec">Quebec</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Nunavut, Yukon, and Northwest Territories">Nunavut, Yukon, and Northwest Territories</option>
+            </select>
+        </div>
+        <div id="form-content" style="display: none;">
+            <!-- <p id="allocationDisplay"></p> -->
+            <fieldset>
+                <legend>Service Provider Organization 1</legend>
+                <div class="spoSection">
+
+                    <h4>Service Provider Organization Name</h4>
+                    <input type="text" id="spo1name" placeholder="Service Provider Organization Name">
+                    <h4> Number of Visa Gift Cards </h4>
+                    <input type="number" id="spo1visa" placeholder="Number of Visa Gift Cards to allocate"
+                        pattern="[0-9]+">
+                    <h4> Number of Loblaws Gift Cards </h4>
+                    <input type="number" id="spo1grocery" placeholder="Number of Loblaws Gift Cards to allocate"
+                        pattern="[0-9]+">
+                    <p id="spo1total"></p>
+
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Service Provider Organization 2</legend>
+                <div class="spoSection">
+                    <h4>Service Provider Organization Name</h4>
+                    <input type="text" id="spo2name" placeholder="Service Provider Organization Name">
+                    <h4> Number of Visa Gift Cards </h4>
+                    <input type="number" id="spo2visa" placeholder="Number of Visa Gift Cards to allocate"
+                        pattern="[0-9]+">
+                    <h4> Number of Loblaws Gift Cards </h4>
+                    <input type="number" id="spo2grocery" placeholder="Number of Loblaws Gift Cards to allocate"
+                        pattern="[0-9]+">
+                    <p id="spo2total"></p>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Service Provider Organization 3</legend>
+                <div class="spoSection">
+                    <h4>Service Provider Organization Name</h4>
+                    <input type="text" id="spo3name" placeholder="Service Provider Organization Name">
+                    <h4> Number of Visa Gift Cards </h4>
+                    <input type="number" id="spo3visa" placeholder="Number of Visa Gift Cards to allocate"
+                        pattern="[0-9]+">
+                    <h4> Number of Loblaws Gift Cards </h4>
+                    <input type="number" id="spo3grocery" placeholder="Number of Loblaws Gift Cards to allocate"
+                        pattern="[0-9]+">
+                    <p id="spo3total"></p>
+                </div>
+            </fieldset>
+
+            <!-- <div>
+            <h2>Total Spendings</h2>
+            <p id="totalSpendings"></p>
+        </div>
+        
+        <div>
+            <h2>Remaining Amount</h2>
+            <p id="remainingAmount"></p>
+        </div> -->
+
+
+            <button id="submitBtn" type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script src="scotiabank_script.js"></script>
+</body>
+
+</html>

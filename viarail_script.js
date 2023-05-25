@@ -36,7 +36,7 @@ async function initialize() {
 function populateOrigins() {
     const originSelect = document.getElementById('origin');
     originSelect.disabled = false;
-    let options = '<option value="">--Please choose an origin--</option>';
+    let options = '<option value="" disabled selected>Please choose an origin</option>';
     for (const origin in routes) {
         options += `<option value="${origin}">${origin}</option>`;
     }
@@ -48,11 +48,11 @@ function updateDestinationOptions() {
     const destinationSelect = document.getElementById('destination');
 
     if (origin === "") {
-        destinationSelect.innerHTML = '<option value="">--Please choose a destination--</option>';
+        destinationSelect.innerHTML = '<option value="" disabled selected >Please choose a destination</option>';
         destinationSelect.disabled = true;
     } else {
         destinationSelect.disabled = false;
-        let options = '<option value="">--Please choose a destination--</option>';
+        let options = '<option value="" disabled selected>Please choose a destination</option>';
         for (const destination in routes[origin]) {
             options += `<option value="${destination}">${destination}</option>`;
         }
