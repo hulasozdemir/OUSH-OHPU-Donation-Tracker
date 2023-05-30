@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <a href="index.html" class="home-button">Go to Home Page</a>
     <header class="form-header">
         <div class="logo-container">
             <img src="images/OUSH_Icon.png" alt="Logo" class="logo">
@@ -35,6 +36,14 @@
             <p id="remainingAmount"></p>
         </div>
     </div>
+    <br>
+    <h3>
+        As per the recommendations provided by IRCC, the Scotiabank fund will be utilized to support clients residing in
+        government-funded hotels by addressing their essential requirements. PT Hubs have the option to select either
+        gift cards for Loblaw stores or e-visa cards as a means of distribution among their clients. Each gift card and
+        visa card will carry a value of $50.
+    </h3>
+    <br><br>
 
     <table>
         <thead>
@@ -61,6 +70,9 @@
         </tbody>
     </table>
     <br>
+    
+
+
     <form id="allocationForm">
         <div class="form-field">
             <label for="province" class="province-label">Province</label>
@@ -76,7 +88,8 @@
                 <option value="New Brunswick">New Brunswick</option>
                 <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
                 <option value="Prince Edward Island">Prince Edward Island</option>
-                <option value="Nunavut, Yukon, and Northwest Territories">Nunavut, Yukon, and Northwest Territories</option>
+                <option value="Nunavut, Yukon, and Northwest Territories">Nunavut, Yukon, and Northwest Territories
+                </option>
             </select>
         </div>
         <div id="form-content" style="display: none;">
@@ -85,12 +98,23 @@
                 <legend>Service Provider Organization 1</legend>
                 <div class="spoSection">
 
-                    <h4>Service Provider Organization Name</h4>
+                    <h4>Service Provider Organization - Name</h4>
                     <input type="text" id="spo1name" placeholder="Service Provider Organization Name">
+
+                    <h4>Service Provider Organization Mailing Address</h4>
+                    <input type="text" id="spo1address" placeholder="Mailing Address">
+                    
+                    <h4>Contact Person</h4>
+                    <input type="text" id="spo1contact" placeholder="Contact Person - Name">
+                    
+                    <h4>Contact Person - Email Address</h4>
+                    <input type="email" id="spo1contactemail" placeholder="Contact Person - Email">
+                    
                     <h4> Number of Visa Gift Cards </h4>
                     <input type="number" id="spo1visa" placeholder="Number of Visa Gift Cards to allocate"
                         pattern="[0-9]+">
-                    <h4> Number of Loblaws Gift Cards </h4>
+                    
+                        <h4> Number of Loblaws Gift Cards </h4>
                     <input type="number" id="spo1grocery" placeholder="Number of Loblaws Gift Cards to allocate"
                         pattern="[0-9]+">
                     <p id="spo1total"></p>
@@ -103,6 +127,16 @@
                 <div class="spoSection">
                     <h4>Service Provider Organization Name</h4>
                     <input type="text" id="spo2name" placeholder="Service Provider Organization Name">
+                    
+                    <h4>Service Provider Organization Mailing Address</h4>
+                    <input type="text" id="spo2address" placeholder="Mailing Address">
+
+                    <h4>Contact Person</h4>
+                    <input type="text" id="spo2contact" placeholder="Contact Person - Name">
+                    
+                    <h4>Contact Person - Email Address</h4>
+                    <input type="email" id="spo2contactemail" placeholder="Contact Person - Email">
+
                     <h4> Number of Visa Gift Cards </h4>
                     <input type="number" id="spo2visa" placeholder="Number of Visa Gift Cards to allocate"
                         pattern="[0-9]+">
@@ -118,25 +152,26 @@
                 <div class="spoSection">
                     <h4>Service Provider Organization Name</h4>
                     <input type="text" id="spo3name" placeholder="Service Provider Organization Name">
+                    
+                    <h4>Service Provider Organization Mailing Address</h4>
+                    <input type="text" id="spo3address" placeholder="Mailing Address">
+
+                    <h4>Contact Person</h4>
+                    <input type="text" id="spo3contact" placeholder="Contact Person - Name">
+                    
+                    <h4>Contact Person - Email Address</h4>
+                    <input type="email" id="spo3contactemail" placeholder="Contact Person - Email">
+
                     <h4> Number of Visa Gift Cards </h4>
                     <input type="number" id="spo3visa" placeholder="Number of Visa Gift Cards to allocate"
                         pattern="[0-9]+">
-                    <h4> Number of Loblaws Gift Cards </h4>
+                    
+                        <h4> Number of Loblaws Gift Cards </h4>
                     <input type="number" id="spo3grocery" placeholder="Number of Loblaws Gift Cards to allocate"
                         pattern="[0-9]+">
                     <p id="spo3total"></p>
                 </div>
             </fieldset>
-
-            <!-- <div>
-            <h2>Total Spendings</h2>
-            <p id="totalSpendings"></p>
-        </div>
-        
-        <div>
-            <h2>Remaining Amount</h2>
-            <p id="remainingAmount"></p>
-        </div> -->
 
 
             <button id="submitBtn" type="submit">Submit</button>

@@ -304,3 +304,7 @@ input[type="date"]:focus {
   display: block;
   justify-content: center;
 }
+
+iframe{
+  display:block;
+}

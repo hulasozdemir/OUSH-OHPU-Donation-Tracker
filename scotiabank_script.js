@@ -126,16 +126,26 @@ formData.addEventListener('submit', async (event) => {
   // Function to submit form data to Google Sheets
 
   
+
     const province = document.getElementById('province').value;
     const spo1name = document.getElementById('spo1name').value;
+    const spo1address = document.getElementById('spo1address').value;
+    const spo1contact = document.getElementById('spo1contact').value;
+    const spo1contactemail = document.getElementById('spo1contactemail').value;    
     const spo1visa = document.getElementById('spo1visa').value;
     const spo1grocery = document.getElementById('spo1grocery').value;
 
     const spo2name = document.getElementById('spo2name').value;
+    const spo2address = document.getElementById('spo2address').value;
+    const spo2contact = document.getElementById('spo2contact').value;
+    const spo2contactemail = document.getElementById('spo2contactemail').value;
     const spo2visa = document.getElementById('spo2visa').value;
     const spo2grocery = document.getElementById('spo2grocery').value;
 
     const spo3name = document.getElementById('spo3name').value;
+    const spo3address = document.getElementById('spo3address').value;
+    const spo3contact = document.getElementById('spo3contact').value;
+    const spo3contactemail = document.getElementById('spo3contactemail').value;
     const spo3visa = document.getElementById('spo3visa').value;
     const spo3grocery = document.getElementById('spo3grocery').value;
     
@@ -143,12 +153,21 @@ formData.addEventListener('submit', async (event) => {
     const data = {
         province,
         spo1name,
+        spo1address,
+        spo1contact,
+        spo1contactemail,
         spo1visa,
         spo1grocery,
         spo2name,
+        spo2address,
+        spo2contact,
+        spo2contactemail,
         spo2visa,
         spo2grocery,
         spo3name,
+        spo3address,
+        spo3contact,
+        spo3contactemail,
         spo3visa,
         spo3grocery
     };
