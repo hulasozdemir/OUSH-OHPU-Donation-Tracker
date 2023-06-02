@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="style.css">
+
+
+
+<body>
+    <a href="index.html" class="home-button">Go to Home Page</a>
+    <header class="form-header">
+        <div class="logo-container">
+            <img src="images/OUSH_Icon.png" alt="Logo" class="logo">
+        </div>
+        <div class="heading-container">
+            <h1>Operation Ukrainian Safe Haven</h1>
+            <h2>ViaRail Travel Voucher Reporting System</h2>
+        </div>
+
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo2">
+        </div>
+    </header>
+
+    <h2>Resource Allocation Survey for Ukrainian Newcomers to Canada</h2>
+
+    <p>This survey covers a range of categories including Housing, Food and Groceries, Transportation, Home Supplies,
+        and Clothing. We kindly request you to indicate the anticipated percentage allocation of resources for each
+        category upon the initial arrival of Ukrainian newcomers to Canada, as well as after a period of more than six
+        months since their arrival. Your insights will help us better understand the evolving needs of newcomers and
+        tailor our support programs accordingly.</p>
+    <form id="allocations-form" method="POST">
+        <div class="form-field">
+            <label for="province" class="province-label">Province</label>
+            <select id="province" name="province" class="province-dropdown">
+                <option value="" disabled selected>Select a province</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="Quebec">Quebec</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Northern Territories">Nunavut, Yukon, and Northern Territories
+                </option>
+            </select>
+        </div>
+        <table id="surveyTable">
+            <tr>
+                <th>Category</th>
+                <th>Upon Arrival (%)</th>
+                <th>After More Than 6 Months (%)</th>
+            </tr>
+            <tr>
+                <td>Housing</td>
+                <td><input type="number" id="housing_1" class="uniformWidth" name="housing_1" min="0" max="100" step="5"
+                        oninput="updateTotal('1')"></td>
+                <td><input type="number" id="housing_2" class="uniformWidth" name="housing_2" min="0" max="100" step="5"
+                        oninput="updateTotal('2')"></td>
+            </tr>
+            <tr>
+                <td>Basic Needs (Grocery, Pharmacy etc.)</td>
+                <td><input type="number" id="food_1" class="uniformWidth" name="food_1" min="0" max="100" step="5"
+                        oninput="updateTotal('1')"></td>
+                <td><input type="number" id="food_2" class="uniformWidth" name="food_2" min="0" max="100" step="5"
+                        oninput="updateTotal('2')"></td>
+            </tr>
+            <tr>
+                <td>Home Supplies (Furniture, School supplies etc.)</td>
+                <td><input type="number" id="homesupplies_1" name="homesupplies_1" class="uniformWidth" min="0"
+                        max="100" step="5" oninput="updateTotal('1')"></td>
+                <td><input type="number" id="homesupplies_2" name="homesupplies_2" class="uniformWidth" min="0"
+                        max="100" step="5" oninput="updateTotal('2')"></td>
+            </tr>
+            <!-- <tr>
+                <td>Transportation (Fuel, Car Maintanence, Public transportation)</td>
+                <td><input type="number" id="transportation_1" name="transportation_1" class="uniformWidth" min="0"
+                        max="100" step="5" oninput="updateTotal('1')"></td>
+                <td><input type="number" id="transportation_2" name="transportation_2" class="uniformWidth" min="0"
+                        max="100" step="5" oninput="updateTotal('2')"></td>
+            </tr> -->
+            <tr>
+                <td>Clothing</td>
+                <td><input type="number" id="clothing_1" name="clothing_1" class="uniformWidth" min="0" max="100"
+                        step="5" oninput="updateTotal('1')"></td>
+                <td><input type="number" id="clothing_2" name="clothing_2" class="uniformWidth" min="0" max="100"
+                        step="5" oninput="updateTotal('2')"></td>
+            </tr>
+            
+            <tr>
+                <td>Employment</td>
+                <td><input type="number" id="employment_1" name="employment_1" class="uniformWidth" min="0" max="100"
+                        step="5" oninput="updateTotal('1')"></td>
+                <td><input type="number" id="employment_2" name="employment_2" class="uniformWidth" min="0" max="100"
+                        step="5" oninput="updateTotal('2')"></td>
+            </tr>
+
+            <tr>
+                <td>Total</td>
+                <td id="total_1">0 %</td>
+                <td id="total_2">0 %</td>
+            </tr>
+
+        </table>
+
+        <p id="errorMsg" style="color: red;"></p>
+        <!-- <p id="errorMsg" style="color: red;"></p> -->
+
+        <button  type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <script src="allocations.js"></script>
+
+</body>
+
+</html>

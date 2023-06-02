@@ -308,3 +308,21 @@ input[type="date"]:focus {
 iframe{
   display:block;
 }
+
+.centered-text {
+  display: inline-block;
+  text-align: center;
+}
+
+.uniformWidth {
+  width: 50px; /* You can adjust the width to your liking */
+}
+
+
+#surveyTable td {
+  padding: 0 50px; 
+}
+
+#surveyTable th {
+  width: 200px; 
+}
