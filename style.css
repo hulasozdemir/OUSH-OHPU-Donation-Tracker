@@ -326,3 +326,8 @@ iframe{
 #surveyTable th {
   width: 200px; 
 }
+
+.required-label {
+  color: red;
+  font-weight: bold;
+}

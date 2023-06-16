@@ -1,102 +1,145 @@
-const provincesDropdown = document.getElementById('provinces');
-const citiesDropdown = document.getElementById('cities');
-const spoDropdown = document.getElementById('spos');
+function populateOrganizationData(province) {
+  fetch('flair_SPOs.csv')
+      .then(response => response.text())
+      .then(data => {
+          const organizations = parseCSVData(data);
+          const organizationData = organizations.find(org => org.PT === province);
+          if (organizationData) {
+              document.getElementById('spo').value = organizationData.SPO;
+              document.getElementById('address1').value = organizationData['Address-1'];
+              document.getElementById('address2').value = organizationData['Address-2'];
+          } else {
+              // If no organization data is found for the selected province
+              document.getElementById('spo').value = '';
+              document.getElementById('address1').value = '';
+              document.getElementById('address2').value = '';
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          // Handle any error that occurs during data fetching
+      });
+}
+
+// Parses the CSV data into an array of objects
+function parseCSVData(csvData) {
+  const rows = csvData.split('\n');
+  const headers = rows[0].split(',');
+
+  const organizations = [];
+  for (let i = 1; i < rows.length; i++) {
+      const row = rows[i].split(',');
+      if (row.length === headers.length) {
+          const organization = {};
+          for (let j = 0; j < headers.length; j++) {
+              organization[headers[j]] = row[j];
+          }
+          organizations.push(organization);
+      }
+  }
+
+  return organizations;
+}
 
 
-// document.querySelectorAll('input[name="donationType"]').forEach(radio => {
-//     radio.addEventListener('change', updateViaRailOptionsVisibility);
-// });
+document.getElementById('province').addEventListener('change', function () {
+  const selectedProvince = this.value;
+  // const selectedPaymentPeriod = document.getElementById('payment-period').value;
+  populateOrganizationData(selectedProvince);
+});
 
 
-// function updateGiftCardOptionsVisibility() {
-//     giftCardOptions.style.display = giftCardRadio.checked ? 'block' : 'none';
+
+// const provincesDropdown = document.getElementById('provinces');
+// const citiesDropdown = document.getElementById('cities');
+// const spoDropdown = document.getElementById('spos');
+
+// let citiesByProvince = {};
+// let sposByCity = {};
+
+
+
+
+
+
+// function updateCitiesDropdown() {
+//     const selectedProvince = provincesDropdown.value;
+//     const cities = citiesByProvince[selectedProvince] || [];
+//     cities.sort();
+//     citiesDropdown.innerHTML = ['<option value="" disabled selected>Select a city</option>', ...cities.map(city => `<option value="${city}">${city}</option>`)].join('');
 // }
 
-// document.querySelectorAll('input[name="donationType"]').forEach(radio => {
-//     radio.addEventListener('change', updateGiftCardOptionsVisibility);
-// });
+// function updateSPODropdown() {
+//     const selectedCity = citiesDropdown.value;
+//     const spos = sposByCity[selectedCity] || [];
+//     spos.sort()
+//     spoDropdown.innerHTML = ['<option value="" disabled selected>Select a SPO</option>', ...spos.map(spo => `<option value="${spo}">${spo}</option>`)].join('');
+// }
 
-let citiesByProvince = {};
-let sposByCity = {};
+// provincesDropdown.addEventListener('change', updateCitiesDropdown);
+// citiesDropdown.addEventListener('change', updateSPODropdown);
 
-function updateCitiesDropdown() {
-    const selectedProvince = provincesDropdown.value;
-    const cities = citiesByProvince[selectedProvince] || [];
-    cities.sort();
-    citiesDropdown.innerHTML = ['<option value="" disabled selected>Select a city</option>', ...cities.map(city => `<option value="${city}">${city}</option>`)].join('');
-}
+// async function fetchCsvData(url) {
+//     const response = await fetch(url);
+//     const csvData = await response.text();
+//     return csvData;
+// }
 
-function updateSPODropdown() {
-    const selectedCity = citiesDropdown.value;
-    const spos = sposByCity[selectedCity] || [];
-    spos.sort()
-    spoDropdown.innerHTML = ['<option value="" disabled selected>Select a SPO</option>', ...spos.map(spo => `<option value="${spo}">${spo}</option>`)].join('');
-}
+// async function parseCsvData(csvData) {
+//     const lines = csvData.split('\n');
+//     const citiesByProvince = {};
+//     const provinces = [];
+//     const sposByCity = {};
 
-provincesDropdown.addEventListener('change', updateCitiesDropdown);
-citiesDropdown.addEventListener('change', updateSPODropdown);
+//     lines.forEach(line => {
+//         const [spo, streetAddress, province, city] = line.split(',');
+//         if (province && city) {
+//             if (!provinces.includes(province)) {
+//                 provinces.push(province);
+//             }
+//             if (!citiesByProvince[province]) {
+//                 citiesByProvince[province] = [];
+//             }
+//             if (!citiesByProvince[province].includes(city)) {
+//                 citiesByProvince[province].push(city);
+//             }
 
-async function fetchCsvData(url) {
-    const response = await fetch(url);
-    const csvData = await response.text();
-    return csvData;
-}
+//             if (!sposByCity[city]) {
+//                 sposByCity[city] = [];
+//             }
+//             if (!sposByCity[city].includes(spo)) {
+//                 sposByCity[city].push(spo);
+//             }
+//             if (!sposByCity[city].includes("Other")) {
+//               sposByCity[city].push("Other");
+//           }
+//         }
+//     });
+//     return { provinces, citiesByProvince, sposByCity };
+// }
 
-async function parseCsvData(csvData) {
-    const lines = csvData.split('\n');
-    const citiesByProvince = {};
-    const provinces = [];
-    const sposByCity = {};
+// function updateProvincesDropdown(provinces) {
+//   provinces.sort();
+//     provincesDropdown.innerHTML = ['<option value="" disabled selected>Select a province</option>', ...provinces.map(province => `<option value="${province}">${province}</option>`)].join('');
+// }
 
-    lines.forEach(line => {
-        const [spo, streetAddress, province, city] = line.split(',');
-        if (province && city) {
-            if (!provinces.includes(province)) {
-                provinces.push(province);
-            }
-            if (!citiesByProvince[province]) {
-                citiesByProvince[province] = [];
-            }
-            if (!citiesByProvince[province].includes(city)) {
-                citiesByProvince[province].push(city);
-            }
+// async function loadProvincesAndCities() {
+//     const csvUrl = 'data/SPOs_processed.csv';
+//     const csvData = await fetchCsvData(csvUrl);
+//     const parsedData = await parseCsvData(csvData);
+//     return parsedData;
+// }
 
-            if (!sposByCity[city]) {
-                sposByCity[city] = [];
-            }
-            if (!sposByCity[city].includes(spo)) {
-                sposByCity[city].push(spo);
-            }
-            if (!sposByCity[city].includes("Other")) {
-              sposByCity[city].push("Other");
-          }
-        }
-    });
-    return { provinces, citiesByProvince, sposByCity };
-}
-
-function updateProvincesDropdown(provinces) {
-  provinces.sort();
-    provincesDropdown.innerHTML = ['<option value="" disabled selected>Select a province</option>', ...provinces.map(province => `<option value="${province}">${province}</option>`)].join('');
-}
-
-async function loadProvincesAndCities() {
-    const csvUrl = 'data/SPOs_processed.csv';
-    const csvData = await fetchCsvData(csvUrl);
-    const parsedData = await parseCsvData(csvData);
-    return parsedData;
-}
-
-loadProvincesAndCities().then(({ provinces, citiesByProvince: cities, sposByCity: spos }) => {
-    citiesByProvince = cities;
+// loadProvincesAndCities().then(({ provinces, citiesByProvince: cities, sposByCity: spos }) => {
+//     citiesByProvince = cities;
     
-    sposByCity = spos;
-    updateProvincesDropdown(provinces);
-    updateCitiesDropdown();
-    updateSPODropdown();
-}).catch(error => {
-    console.error('Failed to load provinces, cities, and SPOs from CSV:', error);
-});
+//     sposByCity = spos;
+//     updateProvincesDropdown(provinces);
+//     updateCitiesDropdown();
+//     updateSPODropdown();
+// }).catch(error => {
+//     console.error('Failed to load provinces, cities, and SPOs from CSV:', error);
+// });
 
 
 let cityList = [];
@@ -160,8 +203,8 @@ const submitButton = document.getElementById('submitBtn');
 formElement.addEventListener('submit', async (event) => {
   event.preventDefault(); // Prevent the default form submission behavior
 
-  const province = document.getElementById('provinces').value;
-  const spo = document.getElementById('spos').value;
+  const province = document.getElementById('province').value;
+  const spo = document.getElementById('spo').value;
   const email = document.getElementById('email').value;
   const dateTravel = document.getElementById('trip-date').value;
   const origin = document.getElementById('origin').value;
@@ -169,6 +212,11 @@ formElement.addEventListener('submit', async (event) => {
   const passengers = document.getElementById('passengers').value;
   const ticketCost = document.getElementById('ticket-cost').value;
   const other = document.getElementById('other').value;
+
+  if (!province || !spo || !email || !dateTravel || !origin || !destination || !passengers || !ticketCost) {
+    alert('Please fill in all required fields.');
+    return;
+}
 
   const formData = {
     province,
