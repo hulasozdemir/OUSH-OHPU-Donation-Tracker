@@ -289,7 +289,7 @@ input[type="date"]:focus {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-#spo1total, #spo2total, #spo3total {
+#spo1total, #spo2total, #spo3total, #spo4total,#spo5total, #spo6total {
   display: block;
   width: 100%;
   padding: 10px;

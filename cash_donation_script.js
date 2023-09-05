@@ -57,6 +57,7 @@ formElement.addEventListener('submit', async (event) => {
     const address2 = document.getElementById('address2').value;
     const chequeNumber = document.getElementById('cheque-number').value;
     const dateReceived = document.getElementById('date-received').value;
+    const families = document.getElementById('families').value;
 
     const formData = {
         province,
@@ -65,7 +66,8 @@ formElement.addEventListener('submit', async (event) => {
         address2,
         paymentPeriod,
         dateReceived,
-        chequeNumber
+        chequeNumber,
+        families
     };
 
     const proxyUrl = '';

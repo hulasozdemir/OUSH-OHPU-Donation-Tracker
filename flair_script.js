@@ -203,6 +203,10 @@ const submitButton = document.getElementById('submitBtn');
 formElement.addEventListener('submit', async (event) => {
   event.preventDefault(); // Prevent the default form submission behavior
 
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Processing...';
+
+
   const province = document.getElementById('province').value;
   const spo = document.getElementById('spo').value;
   const email = document.getElementById('email').value;
@@ -231,7 +235,7 @@ formElement.addEventListener('submit', async (event) => {
   };
 
   const proxyUrl = '';
-  // const targetEndpoint = 'https://script.google.com/macros/s/AKfycbyV8Z4YH4puhUxMzz1IthUrd8jx-tg9xe4kXAb2KYikh1gzRjF5gTqEZCnKA4_88wspTQ/exec'; # ulas
+  // const targetEndpoint = 'https://script.google.com/macros/s/AKfycbyV8Z4YH4puhUxMzz1IthUrd8jx-tg9xe4kXAb2KYikh1gzRjF5gTqEZCnKA4_88wspTQ/exec'; // ulas
   const targetEndpoint = 'https://script.google.com/macros/s/AKfycbyCjCgbvUBpR-JWsx99w3h4H0OXcDp9AaS9tvagXk6GUA4jhv6JXgs7qkYQzUaMoleNfQ/exec';
 
   try {
@@ -258,6 +262,10 @@ formElement.addEventListener('submit', async (event) => {
   } catch (error) {
     window.location.href = 'success.html';//'error.html?errorCode=unknown';
   }
+  
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Submit';
+  
 });
 
 

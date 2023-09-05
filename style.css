@@ -331,3 +331,57 @@ iframe{
   color: red;
   font-weight: bold;
 }
+
+#submitBtn:disabled {
+  background-color: lightgray; /* Change to your desired color */
+  color: gray;
+  cursor: not-allowed;
+}
+
+/* Style for enabled submit button */
+#submitBtn:not(:disabled) {
+  background-color:  #08954ed5;; /* Change to your desired color */
+  color: white;
+  cursor: pointer;
+}
+
+/* Add this to your CSS stylesheet */
+
+/* Style for the label containing the checkbox */
+#confirmation label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* Style for the custom checkbox */
+#confirmationCheckbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Style for the custom checkbox when checked */
+#confirmationCheckbox:checked {
+  background-color:  #08954ed5;; /* Change to your desired color */
+  border-color: #08954ed5;;
+}
+
+/* Style for the checkmark inside the custom checkbox */
+#confirmationCheckbox:checked::before {
+  content: "\2713"; /* Checkmark character */
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}

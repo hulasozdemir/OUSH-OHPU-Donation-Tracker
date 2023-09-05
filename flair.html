@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  
-  
+
+
 
   <body>
     <header class="form-header">
@@ -29,11 +29,33 @@
     </header>
 
     <p align="center">
-      <iframe width="540"height="315" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGrBEbwBxd_swc3U4E16jmPM9CTSJFUBTxpVyv6Ba09qijnQY72XXIRO1bDHn1kLjEPVvHrgtZ0jsx/pubhtml?gid=1733396888&amp;single=true&amp;widget=false&amp;headers=false" style="border:none;"></iframe>
+      Flair Airlines has donated flight tickets to assist displaced Ukrainians with various domestic travel needs. These
+      include essential purposes such as relocation, family reunification, and addressing emergency situations like
+      medical emergencies. Additionally, the donated tickets also serve administrative needs, such as facilitating
+      document processing and applying or renewing passports. This support from Flair Airlines plays a crucial role in
+      helping these individuals rebuild their lives during these difficult times.
+    </p>
+    <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/O_UO9Q8_5tE?si=vUIVTnapaPZGXrZG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+    <p align="center">
+      <iframe width="540" height="315"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGrBEbwBxd_swc3U4E16jmPM9CTSJFUBTxpVyv6Ba09qijnQY72XXIRO1bDHn1kLjEPVvHrgtZ0jsx/pubhtml?gid=1733396888&amp;single=true&amp;widget=false&amp;headers=false"
+        style="border:none;"></iframe>
     </p>
 
 
 
+    <div class="static-info" align="center">
+      <h3 align="center" style="color: red">We have received recent reports indicating that the Flair Airlines booking system is prompting
+        users to enter
+        credit card information, even when the total amount is zero after applying a voucher. As a workaround, we
+        successfully booked a flight for a client using an empty Visa Gift Card. Below are the card details. However,
+        please note that the effectiveness of this temporary solution may not be guaranteed for the long term.</h3>
+      <p align="center">Name on Card: FOR YOU – POUR VOUS</p>
+      <p align="center">Card Number: 4263 7050 2179 6154</p>
+      <p align="center">Expiry Date: 06/26</p>
+      <p align="center">CVV: 705
+      <p>
+    </div>
 
     <a href="https://drive.google.com/file/d/1O08Kw88-HYXFmMtFQgEzckv7NtVMqiTJ/view?usp=sharing">Tutorial Slides</a>
     <br><br>
@@ -42,17 +64,17 @@
         <legend>Service Provider Organization Information</legend>
         <label for="province">Select a Province: <span class="required-label">Required</span></label>
         <select id="province" name="province" class="province">
-            <option value="" disabled selected>Select a province</option>
-            <option value="Alberta">Alberta</option>
-            <option value="British Columbia">British Columbia</option>
-            <option value="Manitoba">Manitoba</option>
-            <option value="New Brunswick">New Brunswick</option>
-            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-            <option value="Nova Scotia">Nova Scotia</option>
-            <option value="Ontario">Ontario</option>
-            <option value="Prince Edward Island">Prince Edward Island</option>
-            <option value="Quebec">Quebec</option>
-            <option value="Saskatchewan">Saskatchewan</option>
+          <option value="" disabled selected>Select a province</option>
+          <option value="Alberta">Alberta</option>
+          <option value="British Columbia">British Columbia</option>
+          <option value="Manitoba">Manitoba</option>
+          <option value="New Brunswick">New Brunswick</option>
+          <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+          <option value="Nova Scotia">Nova Scotia</option>
+          <option value="Ontario">Ontario</option>
+          <option value="Prince Edward Island">Prince Edward Island</option>
+          <option value="Quebec">Quebec</option>
+          <option value="Saskatchewan">Saskatchewan</option>
         </select>
 
         <label for="spo">Service Provider Organization Name:</label>
@@ -61,13 +83,14 @@
         <label for="address1">Address:</label>
         <input type="text" id="address1" class="address-line" readonly>
         <input type="text" id="address2" class="address-line" readonly>
-        
+
         <label for="other">Other:</label>
-        <input type="text" id="other" name="other" placeholder="Please use this field if the SPO information is different than it is listed above.">
+        <input type="text" id="other" name="other"
+          placeholder="Please use this field if the SPO information is different than it is listed above.">
 
         <label for="email">Email: <span class="required-label">Required</span></label>
         <input type="email" id="email" name="email" placeholder="Enter your email address">
-        
+
 
       </fieldset>
       <br>
@@ -95,13 +118,14 @@
           placeholder="Each voucher code can be used to make a booking for up to three passengers" min=1 max=3>
         <br>
         <label for="ticket-cost">Ticket Cost: <span class="required-label">Required</span></label>
-        <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax" min=0 step=".01">
+        <input type="number" id="ticket-cost" name="ticket-cost" placeholder="Total ticket cost including tax" min=0
+          step=".01">
         <br>
-        
+
       </fieldset>
       <button id="submitBtn" type="submit">Submit</button>
     </form>
-   
+
     <script src="flair_script.js"></script>
   </body>
 
