@@ -213,7 +213,7 @@ formData.addEventListener('submit', async (event) => {
   };
 
   const proxyUrl = '';
-  // const targetUrl = "https://script.google.com/macros/s/AKfycbyWTEgYLButnm5unIDIgB4vXIgV7gaAZr2q8YKLWYxFosGjtBf0m7Nvg2-blbURReja/exec"; //oush
+
   const targetUrl = '';
 
   var allocation = parseFloat(document.getElementById('allocationDisplay').innerText.split('$')[1].replace(/,/g, ''));

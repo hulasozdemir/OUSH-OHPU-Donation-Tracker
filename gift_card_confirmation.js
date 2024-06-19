@@ -140,7 +140,7 @@ formElement.addEventListener('submit', async (event) => {
       email
     };
   
-    const googleSheetApiUrl = 'https://script.google.com/macros/s/AKfycbzeQDaLwo5x9TGioRrcjVeoic6nmTAOXYv13X5Qx4SBk-8EFp-Z_D6DJQoyeKcac-kd/exec';
+    const googleSheetApiUrl = 'your_end_point';
   
     try {
         const resp = await fetch(googleSheetApiUrl, {

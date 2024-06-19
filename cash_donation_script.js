@@ -71,8 +71,8 @@ formElement.addEventListener('submit', async (event) => {
     };
 
     const proxyUrl = '';
-    // const targetEndpoint = 'https://script.google.com/macros/s/AKfycbyV8Z4YH4puhUxMzz1IthUrd8jx-tg9xe4kXAb2KYikh1gzRjF5gTqEZCnKA4_88wspTQ/exec'; # ulas
-    const targetEndpoint = "https://script.google.com/macros/s/AKfycbypdVHDDRHJ2_bs74vxH5mz8lnhvLjN8n-xyTnE4LtoqwiF_q6wAx9CHg1Fm3QroVE/exec";
+    
+    const targetEndpoint = "your_end_point";
   
     try {
       const resp = await fetch(proxyUrl + targetEndpoint, {

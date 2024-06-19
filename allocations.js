@@ -101,9 +101,8 @@ formElement.addEventListener('submit', async (event) => {
     };
 
     const proxyUrl = '';
-    // const targetEndpoint = 'https://script.google.com/macros/s/AKfycbyV8Z4YH4puhUxMzz1IthUrd8jx-tg9xe4kXAb2KYikh1gzRjF5gTqEZCnKA4_88wspTQ/exec'; # ulas
-    const targetEndpoint = "https://script.google.com/macros/s/AKfycbwHctAfTR3C5jKPr1GQbjAD_FYcp2JzLmkkIImDQGuPgusWwb4kto_VPbMs4ExlhOMGLA/exec";
-  
+
+    const targetEndpoint = "your_end_point"
     try {
       const resp = await fetch(proxyUrl + targetEndpoint, {
         method: 'POST',
